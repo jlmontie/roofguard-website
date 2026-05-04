@@ -271,4 +271,3 @@ Avoid:
 * Comparison Card
 * Bullet Lists
 * Section Headers (ALL CAPS Oswald)
-
