@@ -28,6 +28,7 @@
         <a href="#process">Process</a>
         <a href="#qualify">Qualify</a>
         <a href="#faq">FAQ</a>
+        <a href="#quote">Quote</a>
       </nav>
       <a href="tel:+18015550150" class="header-phone">
         <span class="phone-label">Call</span>
@@ -52,7 +53,7 @@
             Utah's high-altitude UV and freeze/thaw cycles wear out asphalt shingles years before they should fail. Our protective coating extends roof life and delays costly replacement.
           </p>
           <div class="hero-ctas">
-            <a href="#qualify" class="btn btn-primary">Get a Free Estimate</a>
+            <a href="#quote" class="btn btn-primary">Get a Free Estimate</a>
             <a href="#qualify" class="btn btn-ghost">See If Your Roof Qualifies</a>
           </div>
           <ul class="hero-trust">
@@ -244,7 +245,7 @@
         </ul>
 
         <div class="qualify-cta">
-          <a href="tel:+18015550150" class="btn btn-primary">Get a Free Roof Assessment</a>
+          <a href="#quote" class="btn btn-primary">Get a Free Roof Assessment</a>
           <p class="qualify-cta-note">Or call <a href="tel:+18015550150">(801) 555-0150</a> — we'll tell you honestly if your roof is a candidate.</p>
         </div>
       </div>
@@ -340,19 +341,109 @@
       </div>
     </section>
 
+    <!-- ============ QUOTE FORM ============ -->
+    <section class="section section-quote" id="quote">
+      <div class="container quote-grid">
+        <div class="quote-copy">
+          <p class="section-eyebrow">07 — Quick Quote</p>
+          <h2 class="section-title">A Number First.<br />The Visit Later.</h2>
+          <p class="quote-intro">
+            Send us your address. We measure your roof from satellite imagery and text you back a ballpark quote within 24 hours — no appointment required.
+          </p>
+
+          <ol class="quote-steps">
+            <li>
+              <span class="quote-step-num">01</span>
+              <div>
+                <h3>Send Your Address</h3>
+                <p>Fill out the form. Takes about 60 seconds.</p>
+              </div>
+            </li>
+            <li>
+              <span class="quote-step-num">02</span>
+              <div>
+                <h3>We Measure From Satellite</h3>
+                <p>Square footage and slope pulled from satellite imagery — no site visit required for the initial number.</p>
+              </div>
+            </li>
+            <li>
+              <span class="quote-step-num">03</span>
+              <div>
+                <h3>You Get a Text Back</h3>
+                <p>Ballpark quote within 24 hours. Final pricing confirmed at the on-site assessment.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="quote-form-wrap">
+          <form
+            name="text-quote"
+            method="POST"
+            action="/thanks.html"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            class="quote-form"
+          >
+            <input type="hidden" name="form-name" value="text-quote" />
+            <p class="honeypot" hidden>
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <p class="quote-form-eyebrow">Free Quote Request</p>
+            <h3 class="quote-form-title">Tell us about your roof</h3>
+
+            <div class="field">
+              <label for="q-name">Your Name</label>
+              <input type="text" id="q-name" name="name" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="q-phone">Phone <span class="field-hint">— for the text reply</span></label>
+              <input type="tel" id="q-phone" name="phone" required autocomplete="tel" placeholder="(801) 555-0150" />
+            </div>
+
+            <div class="field">
+              <label for="q-address">Property Address</label>
+              <input type="text" id="q-address" name="address" required autocomplete="street-address" placeholder="Full address — used to measure your roof" />
+            </div>
+
+            <div class="field">
+              <label for="q-age">Approximate Roof Age</label>
+              <select id="q-age" name="roof_age">
+                <option value="">Not sure</option>
+                <option value="under-10">Under 10 years</option>
+                <option value="10-15">10–15 years</option>
+                <option value="15-20">15–20 years</option>
+                <option value="over-20">Over 20 years</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="q-notes">Anything we should know? <span class="field-hint">— optional</span></label>
+              <textarea id="q-notes" name="notes" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Get My Quote</button>
+            <p class="quote-form-fine">No spam. We only text you the quote. Final pricing confirmed at the on-site assessment.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ FINAL CTA ============ -->
     <section class="section section-final" id="contact">
       <div class="container final-inner">
-        <p class="section-eyebrow eyebrow-light">07 — Next Step</p>
-        <h2 class="final-headline">Find Out If<br />Your Roof Qualifies.</h2>
+        <p class="section-eyebrow eyebrow-light">08 — Talk Direct</p>
+        <h2 class="final-headline">Prefer to Talk?<br />Call Direct.</h2>
         <p class="final-sub">
-          Free assessment. No pressure. We'll tell you honestly if your roof is a candidate — or if you should be talking to someone else.
+          Sometimes a five-minute call beats filling out a form. We'll tell you honestly if your roof is a candidate — or if you should be talking to someone else.
         </p>
         <div class="final-cta-row">
-          <a href="tel:+18015550150" class="btn btn-primary btn-lg">Get My Estimate</a>
-          <a href="tel:+18015550150" class="final-phone">
-            <span class="phone-tag">Or call direct</span>
-            <span class="phone-big">(801) 555-0150</span>
+          <a href="tel:+18015550150" class="btn btn-primary btn-lg">Call (801) 555-0150</a>
+          <a href="#quote" class="final-phone">
+            <span class="phone-tag">Or send us your address</span>
+            <span class="phone-big">Get a Text Quote →</span>
           </a>
         </div>
       </div>

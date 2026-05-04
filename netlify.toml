@@ -3,7 +3,7 @@
 
 [build]
   publish = "dist"
-  command = "mkdir -p dist && cp index.html styles.css script.js dist/ && cp -r assets dist/"
+  command = "mkdir -p dist && cp index.html thanks.html styles.css script.js dist/ && cp -r assets dist/"
 
 # Long-lived cache for static assets (logos, images)
 [[headers]]
