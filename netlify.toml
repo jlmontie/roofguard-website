@@ -1,0 +1,21 @@
+# Netlify CD configuration
+# Builds dist/ from public source files on each push.
+
+[build]
+  publish = "dist"
+  command = "mkdir -p dist && cp index.html styles.css script.js dist/ && cp -r assets dist/"
+
+# Long-lived cache for static assets (logos, images)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Sensible security headers for a marketing site
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

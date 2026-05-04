@@ -1,0 +1,40 @@
+# Build output
+dist/
+build/
+out/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node (in case tooling is added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Netlify CLI
+.netlify/
+
+# Logs
+*.log
+logs/
+
+# OS / misc
+*.tmp
+*.bak
+Thumbs.db
