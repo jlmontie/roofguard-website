@@ -357,7 +357,7 @@ h1, h2, h3, h4, h5, p { margin: 0; }
   background-size: cover;
   background-position: center;
 }
-/* Bottom fade + faint texture — always on top */
+/* Faint diagonal texture only — no darkening */
 .hero-photo::before {
   content: '';
   position: absolute;
@@ -370,8 +370,7 @@ h1, h2, h3, h4, h5, p { margin: 0; }
       rgba(255,255,255,0.012) 1px,
       transparent 1px,
       transparent 5px
-    ),
-    linear-gradient(180deg, transparent 60%, rgba(28,31,36,0.55) 100%);
+    );
   pointer-events: none;
 }
 .hero-photo-overlay { z-index: 4; }

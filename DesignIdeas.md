@@ -106,7 +106,7 @@ Left (Standard Roofing):
 Right (Highlighted with Copper Border):
 
 * RoofGuard Treatment
-* $2,000–$5,000
+* $1,500–$3,000
 * Adds 5–10 years
 
 👉 This is your conversion engine
