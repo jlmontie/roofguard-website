@@ -1,0 +1,2 @@
+dig roofguardutah.com +short
+dig www.roofguardutah.com +short
