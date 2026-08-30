@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RoofGuard — Quarter-Sheet Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================================
+       QUARTER-SHEET FLYER — 4.25" x 5.5" portrait
+       Print-ready. For PDF conversion (Chrome "Save as PDF"
+       at custom 4.25in × 5.5in, margins: none).
+       ========================================================= */
+
+    :root {
+      --charcoal: #1C1F24;
+      --copper: #C46A2D;
+      --copper-deep: #A4561F;
+      --sandstone: #E7D8C9;
+      --sandstone-2: #F1E6DA;
+      --paper: #FAFAF7;
+      --ink: #2A2D33;
+      --ink-mute: #5A5E66;
+      --rule: rgba(28, 31, 36, 0.14);
+      --signal: #3FA34D;
+      --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+      --font-body: 'Inter', 'Arial', sans-serif;
+    }
+
+    @page {
+      size: 4.25in 5.5in;
+      margin: 0;
+    }
+
+    * , *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #d9d9d5;
+      font-family: var(--font-body);
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 24px;
+    }
+
+    .flyer {
+      width: 4.25in;
+      height: 5.5in;
+      background: var(--paper);
+      color: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: 0 12px 40px -20px rgba(0,0,0,0.35);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flyer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 90% 10%, rgba(196, 106, 45, 0.09), transparent 60%),
+        radial-gradient(ellipse 60% 45% at 0% 100%, rgba(74, 106, 127, 0.06), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---------- Header ---------- */
+    .flyer-header {
+      position: relative;
+      z-index: 2;
+      padding: 14px 20px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .brand-tag {
+      font-size: 6.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper-deep);
+      line-height: 1;
+    }
+    .header-region {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      text-align: right;
+      line-height: 1.15;
+    }
+    .header-region strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      z-index: 2;
+      padding: 14px 20px 14px;
+    }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 26px;
+      line-height: 0.93;
+      letter-spacing: -0.015em;
+      color: var(--charcoal);
+      margin: 0;
+    }
+    .hero-figure {
+      color: var(--copper);
+      font-weight: 700;
+      font-size: 1.22em;
+      letter-spacing: -0.025em;
+      display: inline-block;
+    }
+    .hero-sub {
+      margin: 8px 0 0;
+      font-size: 9px;
+      line-height: 1.45;
+      color: rgba(28, 31, 36, 0.78);
+    }
+    .hero-sub strong {
+      color: var(--copper);
+      font-weight: 700;
+    }
+
+    /* ---------- Cost comparison ---------- */
+    .cost {
+      position: relative;
+      z-index: 2;
+      margin: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+    .cost-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      padding: 8px 9px 8px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .cost-card--featured {
+      border-color: var(--copper);
+      border-width: 1.5px;
+    }
+    .cost-tab {
+      position: absolute;
+      top: -1px;
+      right: 7px;
+      background: var(--copper);
+      color: #fff;
+      font-size: 5.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 2px 5px;
+    }
+    .cost-label {
+      font-size: 6px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .cost-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 10.5px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .cost-figure {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--charcoal);
+      display: flex;
+      align-items: flex-start;
+      line-height: 1;
+      margin-top: 5px;
+    }
+    .cost-prefix {
+      font-size: 9px;
+      margin-right: 2px;
+      color: var(--copper);
+      margin-top: 2px;
+    }
+    .cost-amount {
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+    .cost-card--featured .cost-prefix,
+    .cost-card--featured .cost-amount {
+      color: var(--copper);
+    }
+    .cost-note {
+      font-size: 6.5px;
+      letter-spacing: 0.01em;
+      color: var(--ink-mute);
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    /* ---------- Benefits ---------- */
+    .benefits {
+      position: relative;
+      z-index: 2;
+      padding: 12px 20px 10px;
+    }
+    .benefits-eyebrow {
+      font-size: 7px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper-deep);
+      margin-bottom: 5px;
+    }
+    .benefits-list {
+      list-style: none;
+      padding: 6px 0 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 7px;
+      border-top: 1px solid var(--rule);
+    }
+    .benefits-list li {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .benefits-num {
+      font-family: var(--font-display);
+      font-size: 7.5px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--copper);
+    }
+    .benefits-list h3 {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--charcoal);
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.02;
+    }
+    .benefits-list p {
+      font-size: 7px;
+      line-height: 1.38;
+      color: var(--ink);
+      margin: 2px 0 0;
+    }
+    .benefits-list p strong {
+      color: var(--copper-deep);
+      font-weight: 700;
+    }
+
+    /* ---------- CTA — Text-Quote UVP ---------- */
+    .cta {
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      background: var(--charcoal);
+      color: #fff;
+      padding: 13px 20px 14px;
+      border-top: 3px solid var(--copper);
+    }
+    .cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 6.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 4px;
+    }
+    .cta-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--copper);
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .cta-line {
+      font-family: var(--font-display);
+      font-size: 15.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.005em;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 0 3px;
+      line-height: 1;
+    }
+    .cta-line .accent {
+      color: var(--copper);
+    }
+    .cta-explainer {
+      font-size: 7.5px;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.72);
+      margin: 0 0 8px;
+      max-width: 280px;
+    }
+    .cta-explainer strong {
+      color: #fff;
+      font-weight: 600;
+    }
+    .cta-contact {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 0 6px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+    .cta-phone {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .cta-phone-label {
+      font-size: 6px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+    .cta-phone-number {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.005em;
+      color: #fff;
+      line-height: 1;
+    }
+    .cta-web {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .cta-web-label {
+      font-size: 6px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .cta-web-url {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.9);
+      line-height: 1;
+    }
+    .cta-fine {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 6px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+    }
+
+    /* ---------- Print ---------- */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .flyer { box-shadow: none; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flyer" role="document" aria-label="RoofGuard quarter-sheet flyer">
+
+    <!-- Header -->
+    <header class="flyer-header">
+      <div class="brand">
+        <img src="../logo-mark.png" alt="" class="brand-mark" />
+        <div class="brand-text">
+          <span class="brand-name">RoofGuard</span>
+          <span class="brand-tag">Roof Coating Specialists</span>
+        </div>
+      </div>
+      <div class="header-region">
+        Serving the<br />
+        <strong>Wasatch Front</strong>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-headline">
+        Avoid a<br />
+        <span class="hero-figure">$20,000</span><br />
+        Roof Replacement
+      </h1>
+      <p class="hero-sub">
+        Spend <strong>~$2,000 now</strong>, not $20,000 later. Add <strong>7–10 years</strong> to the roof you already have.
+      </p>
+    </section>
+
+    <!-- Cost comparison -->
+    <section class="cost">
+      <article class="cost-card">
+        <span class="cost-label">Standard Route</span>
+        <h3 class="cost-title">Replace Roof</h3>
+        <div class="cost-figure">
+          <span class="cost-prefix">$</span>
+          <span class="cost-amount">15–25k</span>
+        </div>
+        <p class="cost-note">Full tear-off. Week-long project.</p>
+      </article>
+      <article class="cost-card cost-card--featured">
+        <span class="cost-tab">Recommended</span>
+        <span class="cost-label">RoofGuard</span>
+        <h3 class="cost-title">Protect It</h3>
+        <div class="cost-figure">
+          <span class="cost-prefix">$</span>
+          <span class="cost-amount">1.5–3k</span>
+        </div>
+        <p class="cost-note">No tear-off. Done in 1 day.</p>
+      </article>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <p class="benefits-eyebrow">What You Get</p>
+      <ul class="benefits-list">
+        <li>
+          <span class="benefits-num">01</span>
+          <h3>Watertight Seal</h3>
+          <p>Seals shingles against rain and snowmelt. Breathable — the roof still vents.</p>
+        </li>
+        <li>
+          <span class="benefits-num">02</span>
+          <h3>Granules Locked</h3>
+          <p>Re-glues loose granules. <strong>~95% less</strong> loss in scrub testing.</p>
+        </li>
+        <li>
+          <span class="benefits-num">03</span>
+          <h3>7-Year Warranty</h3>
+          <p>Manufacturer-backed. Built for Utah snow, ice, and UV.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA — Text-Quote UVP -->
+    <section class="cta">
+      <p class="cta-eyebrow">Guaranteed Quote · No Appointment</p>
+      <h2 class="cta-line">Text Your Address. <span class="accent">Get a Quote.</span></h2>
+      <p class="cta-explainer">
+        We measure your roof from <strong>satellite imagery</strong> and text back a <strong>guaranteed price</strong> within 24 hours. Free. Zero pressure.
+      </p>
+      <div class="cta-contact">
+        <div class="cta-phone">
+          <span class="cta-phone-label">Text or Call</span>
+          <span class="cta-phone-number">(801) 899-6159</span>
+        </div>
+        <div class="cta-web">
+          <span class="cta-web-label">Online</span>
+          <span class="cta-web-url">roofguardutah.com</span>
+        </div>
+      </div>
+      <div class="cta-fine">
+        <span>Licensed &amp; Insured</span>
+        <span>UT Lic. #243246-5501</span>
+        <span>Ogden → Provo</span>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
